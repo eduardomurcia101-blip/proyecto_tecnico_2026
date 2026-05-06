@@ -104,9 +104,9 @@ CREATE TABLE `elementos_linea` (
 CREATE TABLE `empleado_join` (
   `codigo_join` int(11) NOT NULL,
   `nif_join` int(11) NOT NULL,
-  `nombre_join` int(11) NOT NULL,
-  `apellido1_join` int(11) NOT NULL,
-  `apellido2_join` int(11) NOT NULL,
+  `nombre_join` varchar(100) NOT NULL,
+  `apellido1_join` varchar(100) NOT NULL,
+  `apellido2_join` varchar(100) NOT NULL,
   `codigo_departamento` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -114,26 +114,26 @@ CREATE TABLE `empleado_join` (
 -- Volcado de datos para la tabla `empleado_join`
 --
 INSERT INTO `empleado_join` (`codigo_join`, `nif_join`, `nombre_join`, `apellido1_join`, `apellido2_join`, `codigo_departamento`) VALUES
-(1, 100001, 101, 201, 301, 1),
-(2, 100002, 102, 202, 302, 2),
-(3, 100003, 103, 203, 303, 3),
-(4, 100004, 104, 204, 304, 4),
-(5, 100005, 105, 205, 305, 5),
-(6, 100006, 106, 206, 306, 6),
-(7, 100007, 107, 207, 307, 7),
-(8, 100008, 108, 208, 308, 8),
-(9, 100009, 109, 209, 309, 9),
-(10, 100010, 110, 210, 310, 10),
-(11, 100011, 111, 211, 311, 11),
-(12, 100012, 112, 212, 312, 12),
-(13, 100013, 113, 213, 313, 13),
-(14, 100014, 114, 214, 314, 14),
-(15, 100015, 115, 215, 315, 15),
-(16, 100016, 116, 216, 316, 16),
-(17, 100017, 117, 217, 317, 17),
-(18, 100018, 118, 218, 318, 18),
-(19, 100019, 119, 219, 319, 19),
-(20, 100020, 120, 220, 320, 20);
+(1, 100001, 'Ana', 'García', 'López', 1),
+(2, 100002, 'Carlos', 'Pérez', 'Sánchez', 2),
+(3, 100003, 'María', 'Ruiz', 'Fernández', 3),
+(4, 100004, 'Javier', 'Martínez', 'Gómez', 4),
+(5, 100005, 'Lucía', 'Hernández', 'Moreno', 5),
+(6, 100006, 'Diego', 'Jiménez', 'Romero', 6),
+(7, 100007, 'Sofía', 'Díaz', 'Navarro', 7),
+(8, 100008, 'Miguel', 'Torres', 'Ruiz', 8),
+(9, 100009, 'Laura', 'Román', 'Ortiz', 9),
+(10, 100010, 'Raúl', 'Cruz', 'Vargas', 10),
+(11, 100011, 'Elena', 'Ramos', 'Molina', 11),
+(12, 100012, 'Diego', 'Mejía', 'Cortés', 12),
+(13, 100013, 'Patricia', 'Espinosa', 'Suárez', 13),
+(14, 100014, 'Andrés', 'Castillo', 'Guerra', 14),
+(15, 100015, 'Clara', 'Reyes', 'Núñez', 15),
+(16, 100016, 'Fernando', 'Bravo', 'Gil', 16),
+(17, 100017, 'Nuria', 'Cabrera', 'Soto', 17),
+(18, 100018, 'Sergio', 'Vega', 'Ibáñez', 18),
+(19, 100019, 'Marta', 'Marín', 'Campos', 19),
+(20, 100020, 'Rubén', 'Cano', 'Flores', 20);
 
 -- --------------------------------------------------------
 
