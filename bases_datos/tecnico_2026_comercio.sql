@@ -51,6 +51,31 @@ CREATE TABLE `departamento_join` (
   `presupuesto_departamento` int(7) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `departamento_join`
+--
+INSERT INTO `departamento_join` (`codigo_departamento`, `nombre_departamento`, `presupuesto_departamento`) VALUES
+(1, 'Ventas', 45000),
+(2, 'Marketing', 52000),
+(3, 'Finanzas', 61000),
+(4, 'Recursos Humanos', 48000),
+(5, 'Logística', 53000),
+(6, 'Compras', 47000),
+(7, 'Atención al Cliente', 50000),
+(8, 'Calidad', 49000),
+(9, 'Seguridad', 46000),
+(10, 'Desarrollo', 62000),
+(11, 'Investigación', 64000),
+(12, 'Operaciones', 58000),
+(13, 'Administración', 55000),
+(14, 'Legal', 60000),
+(15, 'Sistemas', 63000),
+(16, 'Contabilidad', 57000),
+(17, 'Proyectos', 59000),
+(18, 'Formación', 51000),
+(19, 'Comunicación', 54000),
+(20, 'Soporte Técnico', 56000);
+
 -- --------------------------------------------------------
 
 --
@@ -84,6 +109,31 @@ CREATE TABLE `empleado_join` (
   `apellido2_join` int(11) NOT NULL,
   `codigo_departamento` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `empleado_join`
+--
+INSERT INTO `empleado_join` (`codigo_join`, `nif_join`, `nombre_join`, `apellido1_join`, `apellido2_join`, `codigo_departamento`) VALUES
+(1, 100001, 101, 201, 301, 1),
+(2, 100002, 102, 202, 302, 2),
+(3, 100003, 103, 203, 303, 3),
+(4, 100004, 104, 204, 304, 4),
+(5, 100005, 105, 205, 305, 5),
+(6, 100006, 106, 206, 306, 6),
+(7, 100007, 107, 207, 307, 7),
+(8, 100008, 108, 208, 308, 8),
+(9, 100009, 109, 209, 309, 9),
+(10, 100010, 110, 210, 310, 10),
+(11, 100011, 111, 211, 311, 11),
+(12, 100012, 112, 212, 312, 12),
+(13, 100013, 113, 213, 313, 13),
+(14, 100014, 114, 214, 314, 14),
+(15, 100015, 115, 215, 315, 15),
+(16, 100016, 116, 216, 316, 16),
+(17, 100017, 117, 217, 317, 17),
+(18, 100018, 118, 218, 318, 18),
+(19, 100019, 119, 219, 319, 19),
+(20, 100020, 120, 220, 320, 20);
 
 -- --------------------------------------------------------
 
