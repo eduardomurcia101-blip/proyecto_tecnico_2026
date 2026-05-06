@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 09-04-2026 a las 00:06:43
+-- Tiempo de generación: 06-05-2026 a las 23:31:07
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.0.30
 
@@ -42,6 +42,18 @@ CREATE TABLE `cliente` (
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `departamento_join`
+--
+
+CREATE TABLE `departamento_join` (
+  `codigo_departamento` int(11) NOT NULL,
+  `nombre_departamento` varchar(100) NOT NULL,
+  `presupuesto_departamento` int(7) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `elementos_linea`
 --
 
@@ -56,6 +68,21 @@ CREATE TABLE `elementos_linea` (
   `total_elementos_linea` int(10) DEFAULT NULL,
   `cantidad_existencia_elementos_linea` int(3) DEFAULT NULL,
   `fecha_pedido_elementos_linea` date DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `empleado_join`
+--
+
+CREATE TABLE `empleado_join` (
+  `codigo_join` int(11) NOT NULL,
+  `nif_join` int(11) NOT NULL,
+  `nombre_join` int(11) NOT NULL,
+  `apellido1_join` int(11) NOT NULL,
+  `apellido2_join` int(11) NOT NULL,
+  `codigo_departamento` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -101,12 +128,24 @@ ALTER TABLE `cliente`
   ADD PRIMARY KEY (`id_cliente`);
 
 --
+-- Indices de la tabla `departamento_join`
+--
+ALTER TABLE `departamento_join`
+  ADD PRIMARY KEY (`codigo_departamento`);
+
+--
 -- Indices de la tabla `elementos_linea`
 --
 ALTER TABLE `elementos_linea`
   ADD PRIMARY KEY (`id_elementos_linea`),
   ADD KEY `id_factura` (`id_factura`),
   ADD KEY `id_producto` (`id_producto`);
+
+--
+-- Indices de la tabla `empleado_join`
+--
+ALTER TABLE `empleado_join`
+  ADD KEY `empleado_join_ibfk_1` (`codigo_departamento`);
 
 --
 -- Indices de la tabla `factura`
@@ -132,6 +171,12 @@ ALTER TABLE `cliente`
   MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT de la tabla `departamento_join`
+--
+ALTER TABLE `departamento_join`
+  MODIFY `codigo_departamento` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT de la tabla `producto`
 --
 ALTER TABLE `producto`
@@ -147,6 +192,12 @@ ALTER TABLE `producto`
 ALTER TABLE `elementos_linea`
   ADD CONSTRAINT `elementos_linea_ibfk_1` FOREIGN KEY (`id_factura`) REFERENCES `factura` (`id_factura`),
   ADD CONSTRAINT `elementos_linea_ibfk_2` FOREIGN KEY (`id_producto`) REFERENCES `producto` (`id_producto`);
+
+--
+-- Filtros para la tabla `empleado_join`
+--
+ALTER TABLE `empleado_join`
+  ADD CONSTRAINT `empleado_join_ibfk_1` FOREIGN KEY (`codigo_departamento`) REFERENCES `departamento_join` (`codigo_departamento`);
 
 --
 -- Filtros para la tabla `factura`
