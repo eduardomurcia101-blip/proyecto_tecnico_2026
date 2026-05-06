@@ -39,6 +39,26 @@ CREATE TABLE `cliente` (
   `region_cliente` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `cliente`
+--
+INSERT INTO `cliente` (`id_cliente`, `identificacion_cliente`, `nom_cliente`, `dirrecion_cliente`, `pais_cliente`, `telefono_cliente`, `fecha_pedido_cliente`, `vendedor_cliente`, `region_cliente`) VALUES
+(1, 20000123, 'Ana Gómez', 'Calle Mayor 12', 'España', 612345678, '2026-04-15', 'Luis Díaz', 'Norte'),
+(2, 20000234, 'Carlos Ruiz', 'Avenida del Sol 45', 'España', 623456789, '2026-04-18', 'Marta Sánchez', 'Sur'),
+(3, 20000345, 'María Fernández', 'Plaza España 8', 'España', 634567890, '2026-04-20', 'Raúl Torres', 'Este'),
+(4, 20000456, 'Javier López', 'Calle Luna 16', 'España', 645678901, '2026-04-22', 'Laura Muñoz', 'Oeste'),
+(5, 20000567, 'Lucía Martínez', 'Paseo del Prado 30', 'España', 656789012, '2026-04-24', 'Eva Ramírez', 'Norte'),
+(6, 20000678, 'Diego Pérez', 'Calle del Árbol 4', 'España', 667890123, '2026-04-26', 'Óscar Vidal', 'Sur'),
+(7, 20000789, 'Sofía Sánchez', 'Calle Nueva 22', 'España', 678901234, '2026-04-28', 'Clara Jiménez', 'Este'),
+(8, 20000890, 'Miguel Díaz', 'Avenida Real 50', 'España', 689012345, '2026-05-01', 'Pablo Ruiz', 'Oeste'),
+(9, 20000901, 'Laura Romero', 'Calle del Mar 3', 'España', 690123456, '2026-05-03', 'Nuria Castillo', 'Norte'),
+(10, 20001012, 'Raúl Navarro', 'Plaza Mayor 18', 'España', 701234567, '2026-05-05', 'Sergio Fernández', 'Sur'),
+(11, 20001123, 'Elena Torres', 'Calle del Río 7', 'España', 712345678, '2026-05-07', 'Álvaro León', 'Este'),
+(12, 20001234, 'Patricia Hernández', 'Avenida del Parque 11', 'España', 723456789, '2026-05-09', 'Isaac Molina', 'Oeste'),
+(13, 20001345, 'Andrés Martín', 'Calle Olivo 25', 'España', 734567890, '2026-05-11', 'Elisa Flores', 'Norte'),
+(14, 20001456, 'Clara Ruiz', 'Paseo de la Alameda 2', 'España', 745678901, '2026-05-13', 'Sandra Vega', 'Sur'),
+(15, 20001567, 'Fernando Castillo', 'Calle del Mercado 9', 'España', 756789012, '2026-05-15', 'Nuria Blanco', 'Este');
+
 -- --------------------------------------------------------
 
 --
@@ -94,6 +114,26 @@ CREATE TABLE `elementos_linea` (
   `cantidad_existencia_elementos_linea` int(3) DEFAULT NULL,
   `fecha_pedido_elementos_linea` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `elementos_linea`
+--
+INSERT INTO `elementos_linea` (`id_elementos_linea`, `id_factura`, `id_producto`, `precio_unidad_elementos_linea`, `cantidad_elemnetos_linea`, `precio_ampliado_elementos_linea`, `nombre_producto_elementos_linea`, `total_elementos_linea`, `cantidad_existencia_elementos_linea`, `fecha_pedido_elementos_linea`) VALUES
+(1, 1, 1, 120, 2, 240, 'Auriculares inalámbricos', 240, 50, '2026-04-15'),
+(2, 2, 2, 85, 1, 85, 'Teclado mecánico', 85, 40, '2026-04-18'),
+(3, 3, 3, 45, 3, 135, 'Ratón ergonómico', 135, 70, '2026-04-20'),
+(4, 4, 4, 230, 1, 230, 'Monitor 24"', 230, 25, '2026-04-22'),
+(5, 5, 5, 75, 2, 150, 'Impresora multifunción', 150, 30, '2026-04-24'),
+(6, 6, 6, 15, 5, 75, 'Cartucho tinta negro', 75, 120, '2026-04-26'),
+(7, 7, 7, 25, 4, 100, 'Cable HDMI', 100, 80, '2026-04-28'),
+(8, 8, 8, 50, 2, 100, 'Disco duro externo', 100, 45, '2026-05-01'),
+(9, 9, 9, 18, 3, 54, 'Memoria USB 64GB', 54, 90, '2026-05-03'),
+(10, 10, 10, 130, 1, 130, 'Router inalámbrico', 130, 35, '2026-05-05'),
+(11, 11, 11, 140, 1, 140, 'Portátil 14"', 140, 15, '2026-05-07'),
+(12, 12, 12, 60, 2, 120, 'Altavoces Bluetooth', 120, 40, '2026-05-09'),
+(13, 13, 13, 40, 3, 120, 'Webcam HD', 120, 50, '2026-05-11'),
+(14, 14, 14, 5, 10, 50, 'Soporte para portátil', 50, 100, '2026-05-13'),
+(15, 15, 15, 110, 1, 110, 'Tablet 10"', 110, 20, '2026-05-15');
 
 -- --------------------------------------------------------
 
@@ -151,6 +191,26 @@ CREATE TABLE `factura` (
   `vendedor_factura` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `factura`
+--
+INSERT INTO `factura` (`id_factura`, `id_cliente`, `fecha_pedido_factura`, `subtotal_factura`, `descuento_factura`, `region_factura`, `vendedor_factura`) VALUES
+(1, 1, '2026-04-15', 240, 10, 'Norte', 'Luis Díaz'),
+(2, 2, '2026-04-18', 85, 5, 'Sur', 'Marta Sánchez'),
+(3, 3, '2026-04-20', 135, 0, 'Este', 'Raúl Torres'),
+(4, 4, '2026-04-22', 230, 15, 'Oeste', 'Laura Muñoz'),
+(5, 5, '2026-04-24', 150, 10, 'Norte', 'Eva Ramírez'),
+(6, 6, '2026-04-26', 75, 0, 'Sur', 'Óscar Vidal'),
+(7, 7, '2026-04-28', 100, 5, 'Este', 'Clara Jiménez'),
+(8, 8, '2026-05-01', 100, 10, 'Oeste', 'Pablo Ruiz'),
+(9, 9, '2026-05-03', 54, 0, 'Norte', 'Nuria Castillo'),
+(10, 10, '2026-05-05', 130, 5, 'Sur', 'Sergio Fernández'),
+(11, 11, '2026-05-07', 140, 20, 'Este', 'Álvaro León'),
+(12, 12, '2026-05-09', 120, 10, 'Oeste', 'Isaac Molina'),
+(13, 13, '2026-05-11', 120, 0, 'Norte', 'Elisa Flores'),
+(14, 14, '2026-05-13', 50, 0, 'Sur', 'Sandra Vega'),
+(15, 15, '2026-05-15', 110, 15, 'Este', 'Nuria Blanco');
+
 -- --------------------------------------------------------
 
 --
@@ -166,6 +226,26 @@ CREATE TABLE `producto` (
   `descuento_producto` int(5) NOT NULL,
   `cantidad_total_existencia_producto` int(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `producto`
+--
+INSERT INTO `producto` (`id_producto`, `nom_producto`, `precio_unidad_producto`, `numero_existencia_producto`, `categoria_producto`, `descuento_producto`, `cantidad_total_existencia_producto`) VALUES
+(1, 'Auriculares inalámbricos', 120, 50, 'Electrónica', 10, 50),
+(2, 'Teclado mecánico', 85, 40, 'Periféricos', 5, 40),
+(3, 'Ratón ergonómico', 45, 70, 'Periféricos', 0, 70),
+(4, 'Monitor 24"', 230, 25, 'Pantallas', 15, 25),
+(5, 'Impresora multifunción', 75, 30, 'Oficina', 10, 30),
+(6, 'Cartucho tinta negro', 15, 120, 'Consumibles', 0, 120),
+(7, 'Cable HDMI', 25, 80, 'Accesorios', 0, 80),
+(8, 'Disco duro externo', 50, 45, 'Almacenamiento', 10, 45),
+(9, 'Memoria USB 64GB', 18, 90, 'Almacenamiento', 0, 90),
+(10, 'Router inalámbrico', 130, 35, 'Redes', 5, 35),
+(11, 'Portátil 14"', 140, 15, 'Computación', 20, 15),
+(12, 'Altavoces Bluetooth', 60, 40, 'Audio', 10, 40),
+(13, 'Webcam HD', 40, 50, 'Video', 0, 50),
+(14, 'Soporte para portátil', 5, 100, 'Accesorios', 0, 100),
+(15, 'Tablet 10"', 110, 20, 'Computación', 15, 20);
 
 --
 -- Índices para tablas volcadas
